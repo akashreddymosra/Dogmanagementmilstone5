@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<title>Dog Home</title>
+</head>
+<body>
+	<div class="container">
+
+		<h2>Add new dog</h2>
+		<form th:action="addNewDog">
+			<input type="text" name="id" placeholder="Enter id"><br>
+			<br> <input type="text" name="name" placeholder="Enter name"><br>
+
+			<br> <input type="text" name="breed" placeholder="Enter breed"><br>
+			<br> <br> <select name="trainerId" id="dropOperator">
+				<option value="0">Select Trainer</option>
+				<option th:each="trainer : ${trainers}" th:value="${trainer.trainerId}" th:text="${trainer}"></option>
+			</select> <br> <br>
+
+			<button type="submit">Add New Dog</button>
+
+		</form>
+	</div>
+
+
+</body>
+</html>
